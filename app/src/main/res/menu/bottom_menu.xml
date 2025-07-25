@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/landingFragment"
+        android:icon="@drawable/home"
+        android:title="@string/home"
+        android:menuCategory="secondary"
+        />
+    <item
+        android:id="@+id/showProgressFragment"
+        android:icon="@drawable/progress"
+        android:title="@string/progress"
+        android:menuCategory="secondary"
+        />
+    <item
+        android:id="@+id/downloadedFilesFragment"
+        android:icon="@drawable/download"
+        android:title="@string/downloads"
+        android:menuCategory="secondary"
+        />
+</menu>

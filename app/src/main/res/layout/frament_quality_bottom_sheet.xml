@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/top_rounded_bg"
+    android:padding="@dimen/_12sdp"
+
+    >
+    <View
+        android:id="@+id/topView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_3sdp"
+        android:background="@drawable/top_view"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/thumbNailImage"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/crossImage"
+        android:layout_width="@dimen/_21sdp"
+        android:layout_height="@dimen/_21sdp"
+        android:padding="@dimen/_3sdp"
+        android:src="@drawable/cross_image"
+        android:tint="@color/app_second_color"
+        android:background="@drawable/ripple_oval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/thumbNailImage"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_70sdp"
+        app:layout_constraintHeight_percent="0.125"
+        app:layout_constraintWidth_percent="0.35"
+        app:roundPercent="0.2"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/place_holder"
+        app:layout_constraintTop_toBottomOf="@id/crossImage"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        />
+
+    <EditText
+        android:id="@+id/vdTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textSize="@dimen/_12ssp"
+        app:fontFamily="@font/montserrat_semibold"
+        android:textColor="@color/black"
+        android:maxLines="4"
+        android:background="@android:color/transparent"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        app:layout_constraintStart_toEndOf="@id/thumbNailImage"
+        app:layout_constraintTop_toTopOf="@id/thumbNailImage"
+        app:layout_constraintBottom_toBottomOf="@id/thumbNailImage"
+        app:layout_constraintEnd_toStartOf="@+id/renameText"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/renameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rename"
+        android:textSize="@dimen/_11ssp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/app_second_color"
+        android:textStyle="italic"
+        android:padding="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        app:layout_constraintTop_toBottomOf="@+id/crossImage"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/app_second_color"
+        android:alpha="0.25"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thumbNailImage"
+        app:layout_constraintBottom_toTopOf="@id/vdCaption"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/vdCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        android:textSize="@dimen/_15ssp"
+        android:text="@string/video"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:textColor="@color/app_second_color"
+        android:fontFamily="@font/montserrat_bold"
+        android:drawableStart="@drawable/vd_vextor"
+        android:drawablePadding="@dimen/_7sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/qualityRv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        tools:listitem="@layout/item_quality"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:itemCount="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vdCaption"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/downloadBt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:includeFontPadding="false"
+        android:text="@string/download"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:cornerRadius="@dimen/_8sdp"
+        android:background="@drawable/button_gradient"
+        app:backgroundTint="@null"
+        app:rippleColor="@color/white"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/qualityRv" />
+</androidx.constraintlayout.widget.ConstraintLayout>

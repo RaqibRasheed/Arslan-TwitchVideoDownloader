@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/thumbNail"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_70sdp"
+        android:src="@drawable/place_holder"
+        android:scaleType="centerCrop"
+        app:roundPercent="0.25"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/vdNameText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        tools:text="Aerobatics Vlog stunt - Winning Prize"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textSize="@dimen/_11ssp"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:maxLines="2"
+        app:layout_constraintStart_toEndOf="@id/thumbNail"
+        app:layout_constraintTop_toTopOf="@id/thumbNail"
+        app:layout_constraintEnd_toStartOf="@+id/menuIcon"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/menuIcon"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/delete_icon"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:padding="@dimen/_3sdp"
+        app:layout_constraintStart_toEndOf="@+id/vdNameText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/thumbNail"
+        />
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_4sdp"
+        android:progress="20"
+        android:max="100"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        style="@style/Widget.Material3.LinearProgressIndicator"
+        app:layout_constraintStart_toEndOf="@id/thumbNail"
+        app:layout_constraintEnd_toStartOf="@id/menuIcon"
+        app:layout_constraintTop_toBottomOf="@id/vdNameText"
+        android:progressDrawable="@drawable/progress_drawable"
+        app:layout_constraintBottom_toTopOf="@+id/statusText"
+        />
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        tools:text="Downloading ...."
+        android:fontFamily="@font/montserrat"
+        android:textSize="@dimen/_11ssp"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:layout_marginBottom="@dimen/_3sdp"
+        app:layout_constraintStart_toEndOf="@id/thumbNail"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        app:layout_constraintEnd_toStartOf="@+id/menuIcon"
+        app:layout_constraintBottom_toBottomOf="@id/thumbNail"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

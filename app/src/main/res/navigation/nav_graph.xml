@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/landingFragment">
+
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.presentation.fragments.LandingFragment"
+        android:label="fragment_landing"
+        tools:layout="@layout/fragment_landing" />
+    <fragment
+        android:id="@+id/showProgressFragment"
+        android:name="com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.presentation.fragments.ShowProgressFragment"
+        android:label="fragment_show_progress"
+        tools:layout="@layout/fragment_show_progress" />
+    <fragment
+        android:id="@+id/downloadedFilesFragment"
+        android:name="com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.presentation.fragments.DownloadedFilesFragment"
+        android:label="fragment_downloaded_files"
+        tools:layout="@layout/fragment_downloaded_files" />
+</navigation>

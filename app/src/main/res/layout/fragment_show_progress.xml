@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragments.ShowProgressFragment">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/topBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintHeight_percent="0.145"
+        android:src="@drawable/main_top_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/drawer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:padding="@dimen/_7sdp"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/more"
+        app:layout_constraintTop_toTopOf="@id/topBg"
+        app:layout_constraintStart_toStartOf="@id/topBg"
+        app:layout_constraintBottom_toBottomOf="@id/topBg"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/progress"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="@dimen/_17ssp"
+        android:textColor="@color/white"
+        android:layout_marginStart="@dimen/_12sdp"
+        app:layout_constraintStart_toEndOf="@id/drawer"
+        app:layout_constraintTop_toTopOf="@id/drawer"
+        app:layout_constraintBottom_toBottomOf="@id/drawer"
+        />
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/noMediaIc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:src="@drawable/no_vd_ic"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.175"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBg"
+        app:layout_constraintBottom_toTopOf="@+id/noVideoText"
+        />
+    <TextView
+        android:id="@+id/noVideoText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/no_video_in_progress"
+        android:fontFamily="@font/montserrat"
+        android:textSize="@dimen/_13ssp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noMediaIc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/progressRv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/topBg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/noMediaGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="noMediaIc,noVideoText"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
