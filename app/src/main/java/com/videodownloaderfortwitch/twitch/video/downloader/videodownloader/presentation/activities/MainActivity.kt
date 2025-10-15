@@ -4,13 +4,13 @@ import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.R
+import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.ads_work.SimpleBannerForTwitchVd
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.databinding.ActivityMainBinding
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.presentation.dialogs.TwitchAppCommonDialog
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.util_methods.StatusBarHelper
@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         StatusBarHelper.setLightStatusBarText(this)
         setupViewComponents()
         setupNavController()
+        configureBannerAd()
 
     }
 
@@ -79,5 +80,10 @@ class MainActivity : AppCompatActivity() {
                 mNavController?.navigateUp()
             }
         }
+    }
+
+    private fun configureBannerAd(){
+        SimpleBannerForTwitchVd.loadSimpleBannerAd(this,binding.adsBannerFl,
+            resources.getString(R.string.banner_ad_id))
     }
 }

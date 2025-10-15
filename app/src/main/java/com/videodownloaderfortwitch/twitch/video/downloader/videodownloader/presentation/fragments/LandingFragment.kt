@@ -159,8 +159,8 @@ class LandingFragment : Fragment() {
             settings.blockNetworkImage = false
             settings.blockNetworkLoads = false
             settings.loadWithOverviewMode = true
-           // loadUrl(VdCst.VD_SCRAPPING_SITE_LINK)
-            loadUrl(VdCst.VD_SCRAPPING_SITE_LINK_NEW)
+           loadUrl(VdCst.VD_SCRAPPING_SITE_LINK)
+           // loadUrl(VdCst.VD_SCRAPPING_SITE_LINK_NEW)
         }
     }
 
@@ -169,8 +169,8 @@ class LandingFragment : Fragment() {
         override fun onPageFinished(webView: WebView?, url: String?) {
             super.onPageFinished(webView, url)
 
-        //  scrappingForOldTwitch(webView)
-            scrappingForNewTwitch(webView)
+         scrappingForOldTwitch(webView)
+         //   scrappingForNewTwitch(webView)
 
         }
 

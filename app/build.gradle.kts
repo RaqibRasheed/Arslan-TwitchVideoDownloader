@@ -16,19 +16,46 @@ android {
         applicationId = "com.videodownloaderfortwitch.twitch.video.downloader.videodownloader"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0.1"
+        versionCode = 2
+        versionName = "1.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            //app id
+            resValue ("string", "admob_app_id", "ca-app-pub-3940256099942544~3347511713")
+
+            //App Open Splash
+            resValue("string", "app_open_splash_id", "ca-app-pub-3940256099942544/9257395921")
+
+            //App Open Resume
+            resValue("string", "app_open_resume_id", "ca-app-pub-3940256099942544/9257395921")
+
+            //Interstitial
+            resValue ("string", "interstitial_ad_id", "ca-app-pub-3940256099942544/1033173712")
+
+            //Banner
+            resValue ("string", "banner_ad_id", "ca-app-pub-3940256099942544/9214589741")
+
+            //App Open Resume
+            resValue("string", "app_open_resume_id", "ca-app-pub-3940256099942544/9257395921")
+        }
         release {
+
+            //app id
+            resValue ("string", "admob_app_id", "ca-app-pub-8531857807898615~4116692291")
+
+            //App Open Splash
+            resValue("string", "app_open_splash_id", "ca-app-pub-8531857807898615/9021017692")
+
+            //Banner
+            resValue ("string", "banner_ad_id", "ca-app-pub-8531857807898615/8405816312")
+
+
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -90,4 +117,7 @@ dependencies {
 
     // Google Billing
     implementation(libs.billing)
+
+    //AdmobAds
+    implementation ("com.google.android.gms:play-services-ads:24.4.0")
 }

@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.R
+import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.ads_work.SimpleBannerForTwitchVd
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.data_classes.VideoDownloadDetailModel
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.databinding.ActivityWatchVideoBinding
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.ext_methods.gone
@@ -31,6 +32,7 @@ class WatchVideoActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupComponents()
         setupClickEvents()
+        configureBannerAd()
 
     }
 
@@ -76,6 +78,12 @@ class WatchVideoActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
+    }
+
+
+    private fun configureBannerAd(){
+        SimpleBannerForTwitchVd.loadSimpleBannerAd(this,binding.adsBannerFl,
+            resources.getString(R.string.banner_ad_id))
     }
 
     override fun onResume() {

@@ -6,11 +6,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager.widget.ViewPager
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.R
+import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.ads_work.SimpleBannerForTwitchVd
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.databinding.ActivityOnBoardingBinding
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.ext_methods.navigateToActivity
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.presentation.activities.MainActivity
@@ -51,7 +51,7 @@ class OnBoardingActivity : AppCompatActivity() {
         }
         setupViewPager()
         setupClickListener()
-
+        configureBannerAd()
     }
 
     private fun setupViewPager(){
@@ -109,6 +109,11 @@ class OnBoardingActivity : AppCompatActivity() {
 
     private fun updateSliderCaptions(position: Int) {
         binding.sliderText.text = sliderCaptions[position]
+    }
+
+    private fun configureBannerAd(){
+        SimpleBannerForTwitchVd.loadSimpleBannerAd(this,binding.adsBannerFl,
+            resources.getString(R.string.banner_ad_id))
     }
 
 }

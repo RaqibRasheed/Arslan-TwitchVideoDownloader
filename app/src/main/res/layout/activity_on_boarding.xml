@@ -61,9 +61,23 @@
         app:layout_constraintHeight_percent="0.0625"
         android:layout_marginEnd="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/adsBannerFl"
         app:layout_constraintTop_toBottomOf="@+id/sliderDots"
         />
 
+
+    <FrameLayout
+        android:id="@+id/adsBannerFl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:maxHeight="70dp"
+        android:visibility="visible"
+        app:layout_constraintHeight_max="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

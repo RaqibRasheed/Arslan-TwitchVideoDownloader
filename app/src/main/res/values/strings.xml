@@ -34,5 +34,6 @@
     <string name="rate_us_description">Rate your experience with us</string>
     <string name="continues">Continue</string>
     <string name="downloader">Downloader</string>
+    <string name="this_section_may_contain_ads">This section may contain ads.</string>
 
 </resources>

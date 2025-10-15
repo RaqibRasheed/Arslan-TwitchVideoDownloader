@@ -25,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_16sdp"
         android:padding="@dimen/_7sdp"
         app:layout_constraintHeight_percent="0.05"
         app:layout_constraintDimensionRatio="1:1"

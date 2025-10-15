@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.BuildConfig
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.R
+import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.ads_work.SimpleBannerForTwitchVd
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.databinding.ActivityUtilityBinding
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.presentation.dialogs.TwitchAppCommonDialog
 import com.videodownloaderfortwitch.twitch.video.downloader.videodownloader.util_methods.VdCst.TWITCH_DIALOG_TAG
@@ -34,6 +35,7 @@ class UtilityActivity : AppCompatActivity() {
         setupComponents()
         setupDropdownAnimation()
         setupClickEvents()
+        configureBannerAd()
 
     }
 
@@ -129,5 +131,11 @@ class UtilityActivity : AppCompatActivity() {
             VdLoggers.d("privacy: ${e.localizedMessage}")
         }
 
+    }
+
+
+    private fun configureBannerAd(){
+        SimpleBannerForTwitchVd.loadSimpleBannerAd(this,binding.adsBannerFl,
+            resources.getString(R.string.banner_ad_id))
     }
 }
