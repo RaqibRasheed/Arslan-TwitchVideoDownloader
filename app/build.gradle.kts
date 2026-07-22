@@ -10,14 +10,14 @@ plugins {
 
 android {
     namespace = "com.videodownloaderfortwitch.twitch.video.downloader.videodownloader"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.videodownloaderfortwitch.twitch.video.downloader.videodownloader"
         minSdk = 24
-        targetSdk = 35
-        versionCode = 2
-        versionName = "1.0.2"
+        targetSdk = 36
+        versionCode = 4
+        versionName = "1.0.4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -113,10 +113,6 @@ dependencies {
 
     //OkHttp
     implementation ("com.squareup.okhttp3:okhttp:4.12.0")
-
-
-    // Google Billing
-    implementation(libs.billing)
 
     //AdmobAds
     implementation ("com.google.android.gms:play-services-ads:24.4.0")

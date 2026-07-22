@@ -463,11 +463,7 @@ class LandingFragment : Fragment() {
     private fun checkAndRequestStoragePermissionsForPintDownloaderApp() {
 
         val permissionsNeededMutableList = mutableListOf<String>()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.READ_MEDIA_VIDEO) != PackageManager.PERMISSION_GRANTED) {
-                permissionsNeededMutableList.add(android.Manifest.permission.READ_MEDIA_VIDEO)
-            }
-        } else {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 permissionsNeededMutableList.add(android.Manifest.permission.READ_EXTERNAL_STORAGE)
             }
